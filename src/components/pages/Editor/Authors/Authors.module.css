@@ -1,0 +1,48 @@
+.authors {
+    composes: grid-child from '../../../../assets/css/common/grid.module.css';
+    position: relative;
+    width: var(--three-columns);
+    flex-shrink: 0;
+}
+
+@media screen and (max-width: 1280px) {
+    .authors {
+        width: var(--two-columns);
+    }
+}
+
+@media screen and (max-width: 736px) {
+    .authors {
+        bottom: 0;
+        margin: 0;
+        position: absolute;
+        top: 0;
+        width: var(--gutter-small);
+    }
+}
+
+.author-label {
+    color: var(--color-authors-label);
+    font-size: 12px;
+    line-height: 21px;
+    position: absolute;
+    right: 0;
+    margin-right: 25px;
+    transition: top 0.3s ease;
+}
+
+@media screen and (max-width: 736px) {
+    .full-name {
+        display: none;
+    }
+}
+
+.abbreviated-name {
+    display: none;
+}
+
+@media screen and (max-width: 736px) {
+    .abbreviated-name {
+        display: inline;
+    }
+}

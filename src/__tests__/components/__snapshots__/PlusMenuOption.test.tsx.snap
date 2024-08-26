@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PlusMenuOption should render PlusMenuOption 1`] = `
+<li
+  className="plusMenuButton"
+  onClick={[Function]}
+  onMouseOver={[Function]}
+>
+  <div
+    className="test-icon"
+  />
+  <span />
+</li>
+`;

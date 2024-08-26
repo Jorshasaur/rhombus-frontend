@@ -1,0 +1,65 @@
+.banner {
+    position: fixed !important;
+    width: 100% !important;
+    z-index: 5;
+}
+
+@media screen and (max-width: 736px) {
+    .banner.has-button {
+        height: 92px !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .banner.has-button {
+        height: 112px !important;
+    }
+}
+
+.success {
+    background-color: var(--color-banner-success-background) !important;
+}
+
+.warning {
+    background-color: var(--color-banner-warning-background) !important;
+}
+
+.error {
+    background-color: var(--color-banner-error-background) !important;
+}
+
+.warningIcon {
+    margin-right: 8px;
+}
+
+.success-icon {
+    margin-right: 8px;
+    border: var(--color-success) solid 2px;
+    border-radius: 24px;
+}
+
+.refresh-button {
+    margin-left: 14px;
+}
+
+@media screen and (max-width: 736px) {
+    .refresh-button {
+        display: block;
+        margin: 0 auto;
+        margin-top: 10px;
+    }
+}
+
+.message-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-banner-text);
+}
+
+.message-wrap a {
+    color: var(--color-blue);
+    text-decoration: underline;
+    margin-left: 3px;
+    cursor: pointer;
+}

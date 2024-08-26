@@ -1,0 +1,57 @@
+@value offset: 45;
+@value duration: 1400ms;
+
+@keyframes rotator {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(270deg);
+    }
+}
+
+@keyframes dash {
+    0% {
+        stroke-dashoffset: offset;
+    }
+    50% {
+        stroke-dashoffset: 11.25;
+    }
+    100% {
+        stroke-dashoffset: offset;
+    }
+}
+
+@keyframes dashspin {
+    50% {
+        transform: rotate(135deg);
+    }
+    100% {
+        transform: rotate(450deg);
+    }
+}
+
+.spinner-path {
+    stroke-dasharray: offset;
+    stroke-dashoffset: 0;
+    transform-origin: 50% 50%;
+    stroke: #397bed;
+    animation: dash duration ease-in-out infinite;
+}
+
+.spinner-indicator {
+    display: flex;
+    height: 16px;
+    width: 16px;
+    animation: rotator duration linear infinite;
+}
+
+.spinner-element {
+    animation: dashspin duration linear infinite;
+}
+
+.spinner {
+    transition: linear 200ms, opacity 200ms linear;
+    width: 16px;
+    height: 16px;
+}

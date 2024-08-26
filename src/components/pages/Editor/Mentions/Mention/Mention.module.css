@@ -1,0 +1,70 @@
+.mention {
+    position: relative;
+    font-family: var(--font-maison);
+    letter-spacing: 0.4px;
+}
+
+.mention .mention-hover {
+    align-items: center;
+    background-color: var(--color-light-nav-logo);
+    border-radius: 4px;
+    bottom: 40px;
+    display: none;
+    padding: 18px;
+    position: absolute;
+    min-width: 290px;
+    z-index: 4;
+    left: 50%;
+    transform: translateX(-50%);
+    text-indent: 0;
+}
+
+.mention .mention-hover::after {
+    bottom: -15px;
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid var(--color-light-nav-logo);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.mention .mention-hover img {
+    border-radius: 30px;
+    border: 2px solid white;
+    margin-right: 12px;
+    height: 30px;
+    width: 30px;
+}
+
+.mention:hover .mention-hover {
+    display: flex;
+}
+
+.mention-text {
+    color: var(--color-link);
+}
+
+.member-info {
+    margin-left: 12px;
+}
+
+.member-info-name {
+    color: white;
+    display: block;
+    font-size: 14px;
+    line-height: 1.25;
+    white-space: nowrap;
+}
+
+.member-info-email {
+    color: var(--color-light-grey);
+    display: block;
+    font-size: 14px;
+    line-height: 1.25;
+    white-space: nowrap;
+}

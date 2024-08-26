@@ -1,0 +1,1 @@
+export const DOCUMENT_REGEX = /^\/rhombus\/[\w-~]+-[1-9a-zA-Z]+$/i

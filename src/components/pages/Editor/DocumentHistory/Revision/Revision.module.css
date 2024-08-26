@@ -1,0 +1,54 @@
+.revision-button {
+    background: none;
+    border: 1px solid var(--color-doc-history-revision-button-border);
+    border-style: none none solid;
+    cursor: pointer;
+    display: block;
+    padding: 11px 24px;
+    text-align: left;
+    transition: top 0.3s ease;
+    width: 100%;
+}
+
+.revision-button:hover {
+    background: var(--color-doc-history-revision-button-background);
+}
+
+.revision-button:focus {
+    outline: none;
+}
+
+.active-revision,
+.active-revision * {
+    background: var(--color-blue);
+    pointer-events: none;
+}
+
+.active-revision span,
+.active-revision div {
+    color: var(--color-white) !important;
+}
+
+.active-revision .revision-author {
+    opacity: 0.65;
+}
+
+.revision-title {
+    color: var(--color-doc-history-revision-title) !important;
+    font-weight: 700 !important;
+}
+
+.revision-time {
+    color: var(--color-doc-history-revision-title) !important;
+    padding-left: 11px;
+}
+
+.revision-author {
+    color: var(--color-doc-history-revision-subtitle) !important;
+}
+
+.revision-title,
+.revision-author,
+.revision-time {
+    letter-spacing: 0.4px !important;
+}

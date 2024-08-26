@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "@@testing-library": ["__tests__/testing-library"]
+    },
+    "module": "commonjs",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
+  }
+}

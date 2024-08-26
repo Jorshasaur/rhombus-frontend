@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 -1 18 18">
+  <defs>
+    <path id="path-1" opacity="1" fill-rule="evenodd" d="M1.7626110851031983e-30,1.0000000000000004 C-1.0145306266472492e-16,0.447715250169207 0.447715250169207,-6.763537510981779e-17 1.0000000000000004,0 L5.999999999999684,0 L12.00000000000008,6 L12.000000000000227,14.999999999999984 C12.000000000000236,15.552284749830783 11.552284749831028,16 11.000000000000227,16 L0.9999999999999997,16 C0.4477152501692063,16 3.3817687554910615e-17,15.552284749830793 1.7256332301709633e-30,15 L1.7626110851031983e-30,1.0000000000000004Z"/>
+    <mask id="mask-2" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" x="0" y="0">
+      <rect opacity="1" x="0" y="0" width="12.000000000000227" height="16" fill="black"/>
+      <use xlink:href="#path-1" fill="white"/>
+    </mask>
+    <rect id="rect-3" opacity="1" x="3" y="7.5" width="5" height="1.5"/>
+    <rect id="rect-4" opacity="1" x="3" y="10.5" width="5" height="1.5"/>
+    <path id="path-5" opacity="1" fill-rule="evenodd" d="M8.5,0 L11,1.2246467991473535e-16 C11.552284749830793,1.2246467991473535e-16 12,0.44771525016920677 12,1.0000000000000002 L12,3.5 L8.5,0Z"/>
+  </defs>
+  <g opacity="1">
+    <g opacity="1">
+      <use xlink:href="#path-1" fill-opacity="0" stroke="var(--color-persistent-bar-icon)" stroke-opacity="1" stroke-width="3" stroke-linecap="butt" stroke-linejoin="miter" mask="url(#mask-2)"/>
+    </g>
+    <g opacity="1">
+      <use xlink:href="#rect-3" fill="var(--color-persistent-bar-icon)" fill-opacity="1"/>
+    </g>
+    <g opacity="1">
+      <use xlink:href="#rect-4" fill="var(--color-persistent-bar-icon)" fill-opacity="1"/>
+    </g>
+    <g opacity="1">
+      <use xlink:href="#path-5" fill="var(--color-persistent-bar-icon)" fill-opacity="1"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,42 @@
+.container {
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s ease-out;
+    margin-bottom: 1px;
+}
+
+.container.popout-closed {
+    z-index: 1;
+}
+
+.child {
+    position: absolute;
+    width: 100%;
+    transition: inherit;
+}
+
+.small {
+    composes: child;
+}
+
+.medium {
+    composes: child;
+    background-color: white;
+    border-radius: 4px;
+}
+
+:global(#document-history-editor) div[data-size='large'] .container {
+    height: auto !important;
+    overflow: auto !important;
+    width: auto !important;
+    left: auto !important;
+}
+
+:global(#document-history-editor) div[data-size='large'] .child {
+    position: relative;
+}
+
+:global(#document-history-editor) div[data-size='large'] .small {
+    display: none;
+}

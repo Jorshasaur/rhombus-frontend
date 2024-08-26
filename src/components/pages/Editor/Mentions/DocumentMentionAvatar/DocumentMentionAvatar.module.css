@@ -1,0 +1,14 @@
+.multipleMembers {
+    height: 32px;
+    width: 32px;
+
+    position: relative;
+}
+.multipleMembers > *:first-child {
+    position: absolute;
+}
+.multipleMembers > *:last-child {
+    bottom: 0;
+    position: absolute;
+    right: 0;
+}

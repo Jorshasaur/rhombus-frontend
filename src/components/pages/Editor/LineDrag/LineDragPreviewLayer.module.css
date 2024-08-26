@@ -1,0 +1,195 @@
+.line-drag-layer {
+    display: flex;
+    align-items: center;
+    font-family: var(--font-maison);
+    line-height: 28px;
+}
+
+.line-drag-layer .image {
+    background: var(--color-line-drag-background);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+    padding: 4px;
+    margin: 0;
+}
+
+.line-drag-layer .image img {
+    display: flex;
+    max-width: 100px;
+    padding: 0;
+    margin: 0;
+}
+
+.line-drag-layer .line {
+    background: var(--color-line-drag-background);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.line-drag-layer .line.h1 {
+    line-height: 48px;
+}
+
+.line-drag-layer .line.h2 {
+    line-height: 32px;
+}
+
+.line-drag-layer .line.block-embed {
+    padding: 10px;
+}
+
+.line-drag-layer .line.block-embed > div {
+    margin: 0;
+}
+
+.line-drag-layer .line.multiline {
+    max-height: 51px;
+}
+
+.line-drag-layer .line.multiline.h1 {
+    max-height: 82px;
+}
+
+.line-drag-layer .line.multiline.h2 {
+    max-height: 58px;
+}
+
+.line-drag-layer .line.multiline.list {
+    max-height: 158px;
+}
+
+.line-drag-layer .line.multiline::after {
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    content: '';
+    background:
+ linear-gradient(
+        to top,
+        var(--color-line-drag-background) 0%,
+        rgba(255, 255, 255, 0) 70%
+    );
+}
+
+.line-drag-layer .line.multiline.pre::after {
+    background:
+ linear-gradient(
+        to top,
+        var(--color-line-drag-background) 0%,
+        rgba(245, 248, 255, 0) 70%
+    );
+}
+
+.line-drag-layer .line pre {
+    border-radius: 4px;
+    margin: 0;
+    padding: 5px 20px;
+}
+
+.line-drag-layer .line p,
+.line-drag-layer .line h1,
+.line-drag-layer .line h2,
+.line-drag-layer .line h3,
+.line-drag-layer .line li,
+.line-drag-layer .line blockquote {
+    margin: 6px 10px;
+}
+
+.line-drag-layer svg {
+    margin-right: 10px;
+}
+
+.line-drag-layer :global .pages-author {
+    font-weight: unset;
+}
+
+.line-drag-layer .pane-embed {
+    max-height: 158px;
+}
+
+.line-drag-layer .pane-embed::after {
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    content: '';
+    background:
+ linear-gradient(
+        to top,
+        var(--color-line-drag-background) 0%,
+        rgba(255, 255, 255, 0) 70%
+    );
+}
+
+.table-drag-layer {
+    display: flex;
+    align-items: center;
+    font-family: var(--font-maison);
+    line-height: 28px;
+}
+
+.table-drag-layer .multiline {
+    max-height: 150px;
+    overflow: hidden;
+    position: relative;
+}
+
+.table-drag-layer .multiline::after {
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    content: '';
+    background:
+ linear-gradient(
+        to top,
+        var(--color-light-blue) 0%,
+        rgba(255, 255, 255, 0) 70%
+    );
+}
+
+.table-drag-layer .table-row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background: var(--color-light-blue);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid var(--color-gray-lighter);
+    border-bottom: none;
+}
+
+.table-drag-layer .table-row .table-drag-handle {
+    display: flex;
+    border-right: 1px solid var(--color-gray-lighter);
+    border-bottom: 1px solid var(--color-gray-lighter);
+    width: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.table-drag-layer .table-column {
+    display: flex;
+    flex-direction: column;
+    background: var(--color-light-blue);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid var(--color-gray-lighter);
+    border-bottom: none;
+}
+
+.table-drag-layer .table-column .table-drag-handle {
+    display: flex;
+    border-bottom: 1px solid var(--color-gray-lighter);
+    border-right: 1px solid var(--color-gray-lighter);
+    padding: 9px 8px;
+}
+
+.table-drag-layer :global(.ql-container.ql-snow) {
+    height: auto !important;
+}

@@ -1,0 +1,12 @@
+.text {
+    font-weight: 600;
+    color: #959ba1;
+    font-size: 12px;
+    -webkit-font-smoothing: antialiased;
+}
+
+.avatar-container {
+    border: 2px solid var(--color-mention-avatar-border);
+    overflow: hidden;
+    position: relative;
+}

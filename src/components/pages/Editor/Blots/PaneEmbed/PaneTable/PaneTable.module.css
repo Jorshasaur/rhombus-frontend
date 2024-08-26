@@ -1,0 +1,416 @@
+:global(.selected) .table-grid,
+.table-grid {
+    display: grid;
+    grid-template-columns: 0 var(--column-grid-style);
+    grid-gap: 1px 0;
+    margin: 1px auto 0;
+}
+
+.table-grid.column-menu-table-grid {
+    margin: 0 auto;
+    opacity: 0;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    transform: translate(0, 30px);
+    pointer-events: none;
+}
+
+.table-grid.column-menu-table-grid.highlighted {
+    position: relative;
+    z-index: 5;
+}
+
+:global(.selected) .table-grid.column-menu-table-grid,
+.table-active .table-grid.column-menu-table-grid {
+    pointer-events: auto;
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.table-container.resizing {
+    cursor: col-resize;
+}
+
+.table-cell {
+    background: var(--color-table-background);
+    position: relative;
+    box-shadow: 0 0 0 1px var(--color-table-border);
+}
+
+:global(.selected) .table-cell,
+.table-cell.highlighted {
+    background: var(--color-table-active-cell-background);
+    box-shadow: 0 0 0 1px var(--color-active-table-cell-border);
+    z-index: 3;
+}
+
+.table-cell.dragging {
+    background: var(--color-table-active-cell-background);
+    box-shadow: 0 0 0 1px var(--color-active-table-cell-border);
+    opacity: 0.5;
+    z-index: 2;
+}
+
+.table-cell.active {
+    box-shadow: var(--table-active-cell-shadow);
+    position: relative;
+    z-index: 3;
+}
+
+.menu-cell {
+    box-shadow: 0 0 0 1px var(--color-table-border);
+    height: 30px;
+    position: relative;
+}
+
+:global(.selected) .menu-cell,
+.menu-cell.highlighted,
+.menu-cell.dragging {
+    box-shadow: 0 0 0 1px var(--color-active-table-cell-border);
+    background: var(--color-table-active-cell-background);
+    z-index: 2;
+}
+
+.menu-cell.dragging {
+    opacity: 0.5;
+}
+
+.menu-cell.first {
+    border-top-left-radius: 5px;
+}
+
+.column-menu-cell.last {
+    border-top-right-radius: 5px;
+}
+
+.column-menu-cell.resizing {
+    pointer-events: none;
+}
+
+.row-menu-cell {
+    opacity: 0;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    transform: translate(1px, 0);
+    height: 100%;
+    width: 30px;
+}
+
+.row-menu-cell.last {
+    border-bottom-left-radius: 5px;
+}
+
+:global(.selected) .row-menu-cell,
+.table-active .row-menu-cell {
+    opacity: 1;
+    transform: translate(-30px, 0);
+}
+
+.table-menu-button {
+    position: relative;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    user-select: none;
+}
+
+.table-menu-button svg {
+    left: 10px;
+    opacity: 0;
+    position: absolute;
+    top: 10px;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+}
+
+.table-menu-button svg path {
+    fill: var(--color-table-menu-doots);
+}
+
+.table-menu-button:focus {
+    outline: none;
+}
+
+.table-menu-button.column-menu .table-menu-icon-container {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+.table-menu-button.row-menu {
+    width: 30px;
+    z-index: 1;
+}
+
+.table-menu {
+    background: var(--color-table-background) !important;
+    box-shadow: var(--table-menu-box-shadow);
+    color: var(--color-table-text) !important;
+    width: auto;
+    position: absolute;
+    min-width: 140px;
+    left: 10px;
+    top: calc(100% + 7px);
+}
+
+.table-menu li div {
+    color: var(--color-table-text) !important;
+}
+
+.table-menu li > div:hover {
+    background: var(--color-table-active-cell-background);
+    color: var(--color-table-text) !important;
+}
+
+.column-menu-cell:hover .table-menu-button svg,
+.row-menu-cell:hover .table-menu-button svg,
+.menu-cell.highlighted svg {
+    opacity: 1;
+}
+
+.pane-editor {
+    padding: 3px 8px;
+    transition: padding 0.3s ease;
+    display: flex;
+}
+
+.pane-editor:global(.ql-container.ql-snow) {
+    height: 100%;
+}
+
+.pane-editor :global(.ql-editor),
+.pane-editor :global(.ql-editor p:first-child) {
+    caret-color: auto;
+    color: var(--color-table-text);
+    font-family: var(--font-maison);
+    font-size: 13px;
+    font-weight: 200;
+    line-height: 21px;
+    padding: 0;
+    letter-spacing: 0.33px;
+}
+
+.pane-editor.text-entered :global(.ql-editor) {
+    padding: 0 0 9px;
+}
+
+.pane-editor p:first-child {
+    font-size: var(--comment-font-size);
+}
+
+.row-drag-line {
+    background: var(--color-table-drag-line);
+    height: 3px;
+}
+
+.column-drag-line {
+    background: var(--color-table-drag-line);
+    left: -2px;
+    height: calc(100% + 2px);
+    z-index: 2;
+}
+
+/* Cell Quill Styles */
+.pane-editor:global(.ql-snow .ql-editor h1) {
+    font-size: 19px;
+    line-height: 27px;
+    padding-bottom: 6px;
+    padding-top: 15px;
+}
+
+.pane-editor:global(.ql-snow .ql-editor h2) {
+    font-size: 16px;
+    line-height: 24px;
+    padding-bottom: 3px;
+    padding-top: 9px;
+}
+
+.pane-editor:global(.ql-snow .ql-editor h3) {
+    font-size: 13px;
+    line-height: 21px;
+    padding-bottom: 3px;
+    padding-top: 6px;
+}
+
+.pane-editor :global(.ql-editor blockquote) {
+    border-left: 2px solid var(--blockquote-border);
+    margin-bottom: 21px;
+    margin-top: 21px;
+    padding-left: 6px;
+}
+
+.pane-editor:global(.ql-snow .ql-editor pre) {
+    font-size: 12px;
+    line-height: 21px;
+    margin-bottom: 4px;
+    margin-top: 4px;
+    padding: 4px 4px 6px;
+}
+
+.pane-editor :global(.ql-editor ul li:not(.ql-direction-rtl):not(.context-menu-item)::before) {
+    margin-right: 8px;
+}
+
+.pane-editor :global(.ql-editor ul li:not(.ql-direction-rtl):not(.context-menu-item)) {
+    padding-left: 29px;
+    text-indent: -8px;
+}
+
+.pane-editor :global(.ql-editor ul[data-checked='false'] > li:not(.ql-direction-rtl):not(.context-menu-item)::before),
+.pane-editor :global(.ql-editor ul[data-checked='true'] > li:not(.ql-direction-rtl):not(.context-menu-item)::before) {
+    box-sizing: border-box;
+    height: 12px;
+    left: 7px;
+    top: 4px;
+    width: 12px;
+}
+
+.pane-editor :global(.ql-editor ul[data-checked='false'] > li:not(.ql-direction-rtl):not(.context-menu-item)),
+.pane-editor :global(.ql-editor ul[data-checked='true'] > li:not(.ql-direction-rtl):not(.context-menu-item)) {
+    padding-left: 29px;
+    text-indent: 0;
+}
+
+.pane-editor :global(.ql-editor ul[data-checked='false'] > li:not(.ql-direction-rtl):not(.context-menu-item).ql-indent-1::before),
+.pane-editor :global(.ql-editor ul[data-checked='true'] > li:not(.ql-direction-rtl):not(.context-menu-item).ql-indent-1::before) {
+    left: 27px;
+}
+
+.pane-editor :global(.ql-editor ul[data-checked='false'] > li:not(.ql-direction-rtl):not(.context-menu-item).ql-indent-1),
+.pane-editor :global(.ql-editor ul[data-checked='true'] > li:not(.ql-direction-rtl):not(.context-menu-item).ql-indent-1),
+.pane-editor :global(.ql-editor ul li.ql-indent-1:not(.ql-direction-rtl):not(.context-menu-item)) {
+    padding-left: 49px;
+}
+
+.pane-editor :global(.ql-editor ul[data-checked='false'] > li:not(.ql-direction-rtl):not(.context-menu-item).ql-indent-2::before),
+.pane-editor :global(.ql-editor ul[data-checked='true'] > li:not(.ql-direction-rtl):not(.context-menu-item).ql-indent-2::before) {
+    left: 47px;
+}
+
+.pane-editor :global(.ql-editor ul[data-checked='false'] > li:not(.ql-direction-rtl):not(.context-menu-item).ql-indent-2),
+.pane-editor :global(.ql-editor ul[data-checked='true'] > li:not(.ql-direction-rtl):not(.context-menu-item).ql-indent-2),
+.pane-editor :global(.ql-editor ul li.ql-indent-2:not(.ql-direction-rtl):not(.context-menu-item)) {
+    padding-left: 69px;
+}
+
+.pane-editor :global(.ql-editor ul[data-checked='false'] > li:not(.ql-direction-rtl):not(.context-menu-item).ql-indent-3::before),
+.pane-editor :global(.ql-editor ul[data-checked='true'] > li:not(.ql-direction-rtl):not(.context-menu-item).ql-indent-3::before) {
+    left: 67px;
+}
+
+.pane-editor :global(.ql-editor ul[data-checked='false'] > li:not(.ql-direction-rtl):not(.context-menu-item).ql-indent-3),
+.pane-editor :global(.ql-editor ul[data-checked='true'] > li:not(.ql-direction-rtl):not(.context-menu-item).ql-indent-3),
+.pane-editor :global(.ql-editor ul li.ql-indent-3:not(.ql-direction-rtl):not(.context-menu-item)) {
+    padding-left: 89px;
+}
+
+.pane-editor :global(.ql-editor ul[data-checked='false'] > li:not(.ql-direction-rtl):not(.context-menu-item).ql-indent-4::before),
+.pane-editor :global(.ql-editor ul[data-checked='true'] > li:not(.ql-direction-rtl):not(.context-menu-item).ql-indent-4::before) {
+    left: 87px;
+}
+
+.pane-editor :global(.ql-editor ul[data-checked='false'] > li:not(.ql-direction-rtl):not(.context-menu-item).ql-indent-4),
+.pane-editor :global(.ql-editor ul[data-checked='true'] > li:not(.ql-direction-rtl):not(.context-menu-item).ql-indent-4),
+.pane-editor :global(.ql-editor ul li.ql-indent-4:not(.ql-direction-rtl):not(.context-menu-item)) {
+    padding-left: 109px;
+}
+
+.pane-editor :global(.ql-editor ul[data-checked='false'] > li:not(.ql-direction-rtl):not(.context-menu-item).ql-indent-5::before),
+.pane-editor :global(.ql-editor ul[data-checked='true'] > li:not(.ql-direction-rtl):not(.context-menu-item).ql-indent-5::before) {
+    left: 107px;
+}
+
+.pane-editor :global(.ql-editor ul[data-checked='false'] > li:not(.ql-direction-rtl):not(.context-menu-item).ql-indent-5),
+.pane-editor :global(.ql-editor ul[data-checked='true'] > li:not(.ql-direction-rtl):not(.context-menu-item).ql-indent-5),
+.pane-editor :global(.ql-editor ul li.ql-indent-5:not(.ql-direction-rtl):not(.context-menu-item)) {
+    padding-left: 129px;
+}
+
+.pane-editor :global(.ql-editor ul[data-checked='false'] > li:not(.ql-direction-rtl):not(.context-menu-item).ql-indent-6::before),
+.pane-editor :global(.ql-editor ul[data-checked='true'] > li:not(.ql-direction-rtl):not(.context-menu-item).ql-indent-6::before) {
+    left: 127px;
+}
+
+.pane-editor :global(.ql-editor ul[data-checked='false'] > li:not(.ql-direction-rtl):not(.context-menu-item).ql-indent-6),
+.pane-editor :global(.ql-editor ul[data-checked='true'] > li:not(.ql-direction-rtl):not(.context-menu-item).ql-indent-6),
+.pane-editor :global(.ql-editor ul li.ql-indent-6:not(.ql-direction-rtl):not(.context-menu-item)) {
+    padding-left: 149px;
+}
+
+.pane-editor :global(.ql-editor ul[data-checked='false'] > li:not(.ql-direction-rtl):not(.context-menu-item).ql-indent-7::before),
+.pane-editor :global(.ql-editor ul[data-checked='true'] > li:not(.ql-direction-rtl):not(.context-menu-item).ql-indent-7::before) {
+    left: 147px;
+}
+
+.pane-editor :global(.ql-editor ul[data-checked='false'] > li:not(.ql-direction-rtl):not(.context-menu-item).ql-indent-7),
+.pane-editor :global(.ql-editor ul[data-checked='true'] > li:not(.ql-direction-rtl):not(.context-menu-item).ql-indent-7),
+.pane-editor :global(.ql-editor ul li.ql-indent-7:not(.ql-direction-rtl):not(.context-menu-item)) {
+    padding-left: 169px;
+}
+
+.pane-editor :global(.ql-editor ul[data-checked='false'] > li:not(.ql-direction-rtl):not(.context-menu-item).ql-indent-8::before),
+.pane-editor :global(.ql-editor ul[data-checked='true'] > li:not(.ql-direction-rtl):not(.context-menu-item).ql-indent-8::before) {
+    left: 167px;
+}
+
+.pane-editor :global(.ql-editor ul[data-checked='false'] > li:not(.ql-direction-rtl):not(.context-menu-item).ql-indent-8),
+.pane-editor :global(.ql-editor ul[data-checked='true'] > li:not(.ql-direction-rtl):not(.context-menu-item).ql-indent-8),
+.pane-editor :global(.ql-editor ul li.ql-indent-8:not(.ql-direction-rtl):not(.context-menu-item)) {
+    padding-left: 189px;
+}
+
+.pane-editor :global(.ql-editor ol li:not(.ql-direction-rtl):not(.context-menu-item)::before) {
+    width: 20px;
+}
+
+.pane-editor :global(.ql-editor ol li.ql-indent-1:not(.ql-direction-rtl):not(.context-menu-item)) {
+    padding-left: 60px;
+}
+
+.pane-editor :global(.ql-editor ol li.ql-indent-2:not(.ql-direction-rtl):not(.context-menu-item)) {
+    padding-left: 80px;
+}
+
+.pane-editor :global(.ql-editor ol li.ql-indent-3:not(.ql-direction-rtl):not(.context-menu-item)) {
+    padding-left: 100px;
+}
+
+.pane-editor :global(.ql-editor ol li.ql-indent-4:not(.ql-direction-rtl):not(.context-menu-item)) {
+    padding-left: 120px;
+}
+
+.pane-editor :global(.ql-editor ol li.ql-indent-5:not(.ql-direction-rtl):not(.context-menu-item)) {
+    padding-left: 140px;
+}
+
+.pane-editor :global(.ql-editor ol li.ql-indent-6:not(.ql-direction-rtl):not(.context-menu-item)) {
+    padding-left: 160px;
+}
+
+.pane-editor :global(.ql-editor ol li.ql-indent-7:not(.ql-direction-rtl):not(.context-menu-item)) {
+    padding-left: 180px;
+}
+
+.pane-editor :global(.ql-editor ol li.ql-indent-8:not(.ql-direction-rtl):not(.context-menu-item)) {
+    padding-left: 200px;
+}
+
+.column-drag-handle {
+    position: relative;
+    transition: all 0.125s ease;
+    width: 1px;
+    background: transparent;
+    z-index: 9;
+}
+
+.column-drag-handle.drag-hovered {
+    background: var(--color-table-drag-line);
+    left: -2px;
+    width: 3px;
+}
+
+.column-drag-handle.draggable {
+    cursor: col-resize;
+}

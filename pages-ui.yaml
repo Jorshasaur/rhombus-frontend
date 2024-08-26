@@ -1,0 +1,104 @@
+specVersion: v1
+kind: kubernetes-service
+description: The Rhombus SPA
+networking:
+  ingress:
+    private:
+      paths:
+      - path: /
+  edgeGateway:
+    paths:
+    - path: /rhombus
+health:
+  livenessProbe:
+    httpGet:
+      path: /healthcheck
+      port: 80
+    initialDelaySeconds: 30
+    timeoutSeconds: 3
+  readinessProbe:
+    httpGet:
+      path: /healthcheck
+      port: 80
+    initialDelaySeconds: 20
+    timeoutSeconds: 2
+    successThreshold: 1
+    failureThreshold: 1
+
+# Please review this section to ensure that it fits your service's needs. 
+# See https://invisionapp.atlassian.net/wiki/x/8QRIMw for a detailed description of the available observability options
+observability:
+  metrics:
+    datadog: {}
+config:
+  default:
+    replicas: 3
+    env:
+    - name: GET_HOSTS_FROM
+      value: dns
+    # These LD keys are only used for the express server
+    - name: LAUNCH_DARKLY_API_KEY
+      from: environment
+    - name: LAUNCH_DARKLY_USER
+      from: environment
+    - name: METADATA_NAME
+      from: metadata
+    - name: METADATA_TYPE
+      from: metadata
+    - name: NEWRELIC_BROWSER_APPLICATION_ID
+      value: "154744035"
+    - name: NEWRELIC_BROWSER_LICENSE_KEY
+      value: 1b9c51ab63
+    - name: PORT
+      value: "80"
+    resources:
+      limits:
+        cpu: 100m
+        memory: 128Mi
+      requests:
+        cpu: 50m
+        memory: 64Mi
+    disruption:
+      maxUnavailablePercent: 33%
+  overrides:
+  - selector:
+      tier: testing
+    replicas: 2
+    env:
+    - name: ENVIRONMENT
+      value: beta
+    - name: DEBUG
+      value: "true"
+    - name: NEWRELIC_BROWSER_APPLICATION_ID
+      value: "154743746"
+    resources:
+      limits:
+        cpu: 200m
+        memory: 512Mi
+      requests:
+        cpu: 100m
+        memory: 256Mi
+  - selector:
+      tier: preview
+    env:
+    - name: ENVIRONMENT
+      value: preview
+    resources:
+      limits:
+        cpu: 200m
+        memory: 512Mi
+      requests:
+        cpu: 100m
+        memory: 256Mi
+  - selector:
+      tier: multi-tenant
+    env:
+    - name: ENVIRONMENT
+      value: multi-tenant
+    resources:
+      limits:
+        cpu: 200m
+        memory: 512Mi
+      requests:
+        cpu: 100m
+        memory: 256Mi

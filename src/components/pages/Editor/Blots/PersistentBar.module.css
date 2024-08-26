@@ -1,0 +1,146 @@
+.persistent-bar {
+    display: grid;
+    grid-template-columns: 18px minmax(auto, 95%) minmax(min-content, 1fr);
+    grid-column-gap: 10px;
+    align-items: center;
+    justify-content: start;
+    cursor: pointer;
+    height: 40px;
+    position: relative;
+    padding: 0 15px;
+    width: 100%;
+}
+
+.__transition {
+    transition: opacity 0.3s ease-out;
+}
+
+.bar-children {
+    composes: __transition;
+    display: flex;
+    justify-content: flex-end;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+div[data-unviewable='true'] .bar-children {
+    overflow: visible;
+}
+
+.hover-children {
+    composes: __transition;
+    position: absolute;
+    right: 15px;
+    display: grid;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 5%,
+        rgba(255, 255, 255, 1) 100%
+    );
+    padding-left: 20px;
+}
+
+.service-icon {
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+    height: 18px;
+    width: 18px;
+}
+
+.service-icon.marvel {
+    background-image: url('../../../../assets/images/embeds/marvelapp.png');
+}
+
+.service-icon.codepen {
+    background-image: url('../../../../assets/images/embeds/codepen.png');
+}
+
+.service-icon.sketch {
+    background-image: url('../../../../assets/images/embeds/SKETCH.png');
+}
+
+.service-icon.studio {
+    background-image: url('../../../../assets/images/embeds/studio.png');
+}
+
+.service-icon.pdf {
+    background-image: url('../../../../assets/images/embeds/pdf.png');
+}
+
+.service-icon.excel {
+    background-image: url('../../../../assets/images/embeds/xlsx.png');
+}
+
+.service-icon.word {
+    background-image: url('../../../../assets/images/embeds/word.png');
+}
+
+.service-icon.powerpoint {
+    background-image: url('../../../../assets/images/embeds/pptx.png');
+}
+
+.service-icon.movie {
+    background-image: url('../../../../assets/images/embeds/generic-movie.png');
+}
+
+.text-content {
+    align-items: center;
+    display: flex;
+}
+
+.text-content .title {
+    color: var(--color-embed-title);
+    display: inline-block;
+    font-family: var(--font-maison);
+    font-size: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: auto;
+}
+
+.text-content .title .extension {
+    color: var(--color-embed-subtitle);
+    padding-left: 4px;
+}
+
+.text-content .title a {
+    color: var(--color-embed-title);
+    text-decoration: none;
+}
+
+.text-content .subtitle {
+    color: var(--color-embed-subtitle);
+    display: inline-block;
+    font-size: 14px;
+    overflow: hidden;
+    padding: 0 0 0 12px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: auto;
+}
+
+.text-content .subtitle a {
+    color: var(--color-embed-subtitle);
+    text-decoration: none;
+}
+
+.text-content .title {
+    line-height: 17px;
+    margin-top: 1px;
+}
+
+.text-content .subtitle {
+    line-height: 14px;
+    margin-top: 1px;
+}
+
+.service-error-message-container {
+    position: relative;
+    text-align: center;
+    top: 3px;
+}

@@ -1,0 +1,102 @@
+.modal-container {
+    align-items: center;
+    display: flex;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    background: var(--color-doc-history-backdrop);
+    backdrop-filter: var(--doc-history-backdrop-filter);
+    z-index: 5;
+    left: 0;
+    top: 0;
+}
+
+.revisions-header {
+    font-family: var(--font-maison-demi) !important;
+    color: var(--color-doc-history-revisions-header);
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.4px;
+    padding: 16px 0 16px 24px;
+    border: 1px var(--color-doc-history-revisions-border) solid;
+    border-style: none none solid;
+}
+
+.revisions-list {
+    overflow-y: auto;
+}
+
+.history-modal {
+    align-items: stretch;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    height: calc(100vh - 100px);
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+.revisions-container {
+    background: var(--color-doc-history-revisions-background);
+    flex: 0 0 300px;
+    border: 1px solid var(--color-doc-history-revisions-border);
+    border-style: none solid none none;
+    padding-bottom: 81px;
+    height: 100%;
+    display: grid;
+    grid-template-areas:
+        'header'
+        'revisions'
+        'buttons';
+    grid-template-rows:
+        -webkit-min-content
+        1fr
+        -webkit-min-content;
+    grid-template-rows:
+        min-content
+        1fr
+        min-content;
+}
+
+.editor-container {
+    flex: 1 1 auto;
+}
+
+.preview-editor {
+    background: var(--color-doc-history-background);
+    height: 100%;
+    overflow: auto;
+    overflow-x: hidden;
+    border: 0 !important;
+    padding: 26px;
+}
+
+.preview-editor *,
+.preview-editor *::before,
+.preview-editor *::after {
+    pointer-events: none;
+    box-sizing: border-box;
+}
+
+.button-container {
+    justify-content: center;
+    border-top: 1px solid var(--color-doc-history-revisions-border);
+    width: 300px;
+    padding: 24px 0;
+    background: var(--color-doc-history-revisions-background);
+}
+
+.history-button {
+    width: 118px;
+    height: 32px !important;
+}
+
+.button-container button:first-child {
+    margin-right: 12px;
+    color: var(--color-doc-history-revision-title);
+}
+
+.button-container button:first-child:hover {
+    background-color: var(--color-doc-history-cancel-button-background-hover);
+}

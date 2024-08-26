@@ -1,0 +1,117 @@
+.backdrop {
+    --bezier: cubic-bezier(0.64, 0.04, 0.35, 1);
+    --gradient-dark: #26282b;
+    --gradient-light: #393c40;
+
+    background: linear-gradient(
+        var(--gradient-dark) 0%,
+        var(--gradient-light) 15%,
+        var(--gradient-light) 85%,
+        var(--gradient-dark) 100%
+    );
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 240ms var(--bezier);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    display: grid;
+    padding: 0 60px;
+}
+
+@media screen and (max-width: 736px) {
+    .backdrop {
+        padding: 0 10px;
+    }
+}
+
+.backdrop-visible {
+    composes: backdrop;
+    pointer-events: unset;
+    opacity: 1;
+}
+
+.backdrop-visible .close-button-container,
+.backdrop-visible .action-area {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.modal {
+    display: grid;
+    grid-template-areas:
+        'close action-area'
+        'body  body';
+    grid-template-rows: 50px 1fr;
+    grid-template-columns: 1fr minmax(min-content, max-content);
+    grid-gap: 10px;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+
+@media screen and (max-width: 736px) {
+    .modal {
+        margin-bottom: 10px;
+    }
+}
+
+._modal-actions-alignment {
+    display: grid;
+    align-items: end;
+}
+
+._modal-actions-transition {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition-property: opacity, transform;
+    transition: 500ms var(--bezier) 470ms;
+}
+
+.close-button-container {
+    composes: _modal-actions-alignment;
+    composes: _modal-actions-transition;
+    grid-area: close;
+    display: flex;
+    align-items: flex-end;
+}
+
+.close-button {
+    cursor: pointer;
+    display: flex;
+}
+
+.action-area {
+    composes: _modal-actions-alignment;
+    composes: _modal-actions-transition;
+    grid-area: action-area;
+}
+
+.body {
+    grid-area: body;
+    background-color: white;
+    border-radius: 7px;
+    overflow: hidden;
+    transition-property: opacity, transform;
+    transition: 1000ms var(--bezier);
+    transform: scale(0.5);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.body iframe {
+    border: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.body-visible {
+    composes: body;
+    transition: transform 400ms var(--bezier) 70ms, opacity 240ms var(--bezier);
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: unset;
+}

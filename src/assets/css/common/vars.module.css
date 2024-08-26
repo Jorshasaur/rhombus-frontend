@@ -1,0 +1,244 @@
+:root {
+    --color-authors-label: #a5b1cd;
+    --color-white: #fff;
+    --color-pink: #f36;
+    --color-lightest-grey: #f9f9fa;
+    --color-light-grey: #9ca0aa;
+    --color-dark-grey: #434c5e;
+    --color-light-blue: #f5f8ff;
+    --color-dark-blue: #596377;
+    --color-dark-blue-grey: #526da3;
+    --color-light-blue-grey: #8c96a9;
+    --color-dropdown-arrow: #c7cad1;
+    --color-dropdown-divider: #e4e7ed;
+    --color-light-nav-border: #ececec;
+    --color-dark-nav-background: #15181f;
+    --color-light-nav-logo: #313745;
+    --color-persistent-bar-background: white;
+    --color-table-background: white;
+    --color-persistent-bar-icon: var(--color-pink);
+    --color-embed-backdrop: #393c40;
+    --color-embed-border: #e4e7ed;
+    --color-embed-title: #3d4453;
+    --color-embed-subtitle: #6c7689;
+    --color-link: #2761f1;
+    --color-expanded-image-background: #1d1f21;
+
+    --color-create-embed-modal-bg: white;
+    --color-create-freehand-modal-border: 1px solid rgba(199, 202, 209, 0.5);
+    --color-create-freehand-selected-bg: #a8a8aa1a;
+
+    --color-freehand-zoom: white;
+
+    --color-active-table-cell-border: #e0e5ee;
+    --color-table-menu-doots: #acb7d1;
+
+    --color-comment-border: #191c28;
+    --color-comment-fill: #fff;
+
+    --color-banner-success-background: var(--color-green-lighter);
+    --color-banner-warning-background: var(--color-yellow-lighter);
+    --color-banner-error-background: var(--color-red-lighter);
+    --color-banner-text: var(--color-black-lighter);
+
+    --floating-toolbar-layer: 4;
+    --color-floating-toolbar-background: white;
+    --color-floating-toolbar-background-hover: var(--color-lightest-grey);
+    --color-floating-toolbar-button: var(--color-dark-grey);
+    --color-floating-toolbar-selected: var(--color-pink);
+    --color-floating-toolbar-keyboard-hint: var(--color-light-gray);
+
+    --upload-button-layer: 2;
+    --color-selection: #1e8fe1;
+    --blockquote-border: #e7ebf4;
+    --color-mentions-list-filter-background: #e7ebf4;
+    --color-mentions-list-filter-text: #94a0bf;
+
+    --checked-text-color: #9ca0aa;
+    --color-checkbox-unchecked: var(--color-gray-darker);
+    --color-checkbox-hover: var(--color-black-lighter);
+    --color-checkbox-checked: var(--color-blue);
+
+    --color-tooltip-background: white;
+    --color-tooltip-text: #444;
+    --color-tooltip-divider: #ccc;
+    --tooltip-shadow:
+ 0 0 1px 0 rgba(0, 0, 0, 0.2),
+        0 5px 10px 0 rgba(0, 0, 0, 0.12);
+
+    --color-mention-avatar-border: white;
+
+    --color-line-drag-background: white;
+
+    --doc-history-backdrop-filter: none;
+    --color-doc-history-backdrop: rgba(21, 24, 31, 0.85);
+    --color-doc-history-background: white;
+    --color-doc-history-revisions-background: var(--color-gray-lightest);
+    --color-doc-history-revisions-border: var(--color-gray-lighter);
+    --color-doc-history-revisions-header: var(--color-plus-menu-header);
+    --color-doc-history-revisions-header-border: var(--color-gray);
+    --color-doc-history-revision-button-background: var(--color-gray-lightest);
+    --color-doc-history-revision-button-border: var(--color-gray);
+    --color-doc-history-revision-title: var(--color-plus-menu-header);
+    --color-doc-history-revision-subtitle: #9599a2;
+    --color-doc-history-cancel-button-background-hover: initial;
+
+    --color-theme-picker-background: white;
+    --color-theme-picker-text: var(--color-plus-menu-header);
+    --color-theme-picker-label: var(--color-doc-history-revision-subtitle);
+    --color-theme-picker-border: var(--color-gray-darker);
+    --color-theme-picker-border-hover: inherit;
+
+    --color-slate: #b6b9c2;
+    --color-mark: #dae5ff;
+    --color-divider: #e7ebf4;
+    --color-success: #0ab19c;
+    --color-line-control-button: #acb7d1;
+    --color-embed-background: #f3f3f3;
+    --color-embed-small-image-border: #eee;
+    --color-plus-menu-header: #22252b;
+    --color-plus-menu-input: #22252b;
+
+    --color-table-border: var(--color-gray-lighter);
+    --color-table-text: var(--color-black-lighter);
+    --color-table-active-cell-background: var(--color-light-blue);
+    --color-table-active-cell-shadow: rgba(0, 0, 0, 0.15);
+    --table-active-cell-shadow: 0 2px 15px 0 var(--color-table-active-cell-shadow), 0 0 1px 0 var(--color-table-active-cell-shadow);
+    --color-table-drag-line: #d4e1ff;
+    --table-menu-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 5px 10px rgba(0, 0, 0, 0.15);
+
+    /* Global Nav Colors */
+    --color-blue: #276ee5;
+    --color-blue-darker: #1f53d5;
+    --color-green-lighter: #f2fbfa;
+    --color-green: #11b683;
+    --color-green-darker: #00a08e;
+    --color-yellow-lighter: #fffbf4;
+    --color-yellow: #ffb631;
+    --color-yellow-darker: #e8a01e;
+    --color-red-lighter: #fdf3f5;
+    --color-red: #e01e3d;
+    --color-red-darker: #c60d2b;
+    --color-ink-lightest: #9ca0aa;
+    --color-ink-lighter: #6c7689;
+    --color-ink: #434c5e;
+    --color-ink-darker: #313745;
+    --color-gray-lightest: #f8f8fa;
+    --color-gray-lighter: #ebecee;
+    --color-gray: #dee0e4;
+    --color-gray-darker: #c7cad1;
+    --color-black-lighter: #182237;
+    --color-black: #15181f;
+
+    /* Bezier curves */
+    --bezier-in: cubic-bezier(0.94, 0.01, 0.83, 0.86);
+    --bezier-out: cubic-bezier(0.2, 0.91, 0.85, 0.96);
+    --bezier-in-out: cubic-bezier(0.82, 0.09, 0.4, 0.92);
+}
+
+/* Dark mode redefinitions */
+html[color-scheme='dark'] {
+
+    /* Structure */
+    --color-structure: #17191d;
+    --color-structure-light: #22252b;
+    --color-structure-lighter: #3d3f46;
+    --color-structure-lightest: #6e7077;
+
+    /* Ink */
+    --color-ink: #ebecee;
+    --color-ink-darker: #c7cad1;
+    --color-ink-darkest: #9599a2;
+    --color-ink-blue-1: #a5b1cd;
+    --color-ink-blue-2: #8aabff;
+    --color-ink-blue-3: #689bf0;
+
+    /* Divider */
+    --color-divider: var(--color-text-highlight);
+    --color-divider-light: #ebecee26;
+
+    /* Text */
+    --color-text-highlight: #2e3b5b;
+
+    /* Tertiary */
+    --color-tertiary: #276ee5;
+
+    /* Aliases */
+    --color-link: var(--color-ink-blue-2);
+    --blockquote-border: var(--color-structure-lighter);
+
+    --color-banner-success-background: var(--color-structure-light);
+    --color-banner-warning-background: var(--color-structure-light);
+    --color-banner-error-background: var(--color-structure-light);
+    --color-banner-text: var(--color-ink);
+
+    --checked-text-color: #9599a288;
+    --color-checkbox-unchecked: var(--color-ink-darkest);
+    --color-checkbox-hover: var(--color-ink);
+    --color-checkbox-checked: var(--color-ink-blue-3);
+
+    --color-floating-toolbar-background: var(--color-structure-lighter);
+    --color-floating-toolbar-background-hover: var(--color-structure-lightest);
+    --color-floating-toolbar-button: var(--color-ink-darker);
+    --color-floating-toolbar-selected: var(--color-ink-blue-3);
+    --color-floating-toolbar-keyboard-hint: var(--color-ink-darkest);
+    --color-dropdown-divider: #5a5c62;
+
+    --color-create-embed-modal-bg: var(--color-structure-light);
+    --color-create-freehand-selected-bg: var(--color-structure-lighter);
+
+    --color-tooltip-background: var(--color-floating-toolbar-background);
+    --color-tooltip-text: var(--color-floating-toolbar-button);
+    --color-tooltip-divider: var(--color-dropdown-divider);
+
+    --color-mention-avatar-border: var(--color-structure-light);
+
+    --color-line-drag-background: var(--color-structure-light);
+
+    --doc-history-backdrop-filter: blur(20px);
+    --color-doc-history-backdrop: #9599a255;
+    --color-doc-history-background: var(--color-structure);
+    --color-doc-history-revisions-background: var(--color-structure-light);
+    --color-doc-history-revisions-border: var(--color-structure-lighter);
+    --color-doc-history-revisions-header: var(--color-ink);
+    --color-doc-history-revisions-header-border: var(--color-structure-lighter);
+    --color-doc-history-revision-button-background:
+ var(
+        --color-structure-lightest
+    );
+    --color-doc-history-revision-button-border: var(--color-structure-lighter);
+    --color-doc-history-revision-title: var(--color-ink);
+    --color-doc-history-revision-subtitle: var(--color-ink-lightest);
+
+    /* prettier-ignore */
+    --color-doc-history-cancel-button-background-hover: var(--color-structure-lightest);
+    --color-theme-picker-background:
+ var(
+        --color-doc-history-revisions-background
+    );
+    --color-theme-picker-border:
+ var(
+        --color-doc-history-revision-button-border
+    );
+
+    --color-theme-picker-text: var(--color-doc-history-revisions-title);
+    --color-theme-picker-label: var(--color-ink-darkest);
+    --color-theme-picker-border-hover: var(--color-structure-lightest);
+
+    --color-plus-menu-header: var(--color-ink-darker);
+    --color-plus-menu-input: var(--color-ink-dark);
+
+    --color-persistent-bar-background: var(--color-structure);
+    --color-persistent-bar-icon: var(--color-ink-blue-3);
+
+    --color-table-background: var(--color-structure-light);
+    --color-table-border: #404348;
+    --color-table-text: var(--color-ink);
+    --color-table-active-cell-shadow: rgba(155, 157, 160, 1);
+    --color-active-table-cell-border: #868894;
+    --table-active-cell-shadow: 0 0 0 1px var(--color-table-active-cell-shadow);
+    --color-table-drag-line: var(--color-structure-lightest);
+    --color-table-active-cell-background: var(--color-structure-lighter);
+    --color-table-menu-doots: var(--color-ink-darkest);
+    --table-menu-box-shadow: 0 0 0 1px var(--color-structure-lighter);
+}

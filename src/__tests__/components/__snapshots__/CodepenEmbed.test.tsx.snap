@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CodepenEmbed /> should render a Codepen embed 1`] = `
+<Fragment>
+  <div
+    className="
+                        blockEmbedWrapper
+                        codepen
+                        123456
+                    "
+  >
+    <div
+      className="extendedInfo"
+      style={
+        Object {
+          "borderTop": 0,
+        }
+      }
+    >
+      <img
+        className="ratio"
+        src="prototype-placeholder.png"
+      />
+      <div
+        className="infoWrapper thumbnailEmbed"
+      >
+        <iframe
+          src="https://codepen.io/FilipVitas/embed/yWyvwy"
+        />
+      </div>
+    </div>
+    <Button
+      className="editButton"
+      data-allow-propagation="true"
+      data-testid="codepen-embed__expand-button"
+      onClick={[Function]}
+      onMouseDown={[Function]}
+      order="primary"
+      role="button"
+      style={
+        Object {
+          "borderRadius": "50%",
+          "padding": "1px 12px",
+        }
+      }
+    >
+      <svg
+        data-allow-propagation="true"
+        fill="white"
+        style={
+          Object {
+            "margin": 0,
+          }
+        }
+      />
+    </Button>
+  </div>
+  <PersistentBar
+    hoverChildren={
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+          }
+        }
+      >
+        <Unknown
+          author="Bob the Builder"
+          className="persistentTimestamp"
+          createdAt="2018-11-14T20:16:45.000Z"
+        />
+      </div>
+    }
+    onClick={[Function]}
+    originalLink="https://codepen.io/FilipVitas/pen/yWyvwy"
+    service="codepen"
+  />
+</Fragment>
+`;

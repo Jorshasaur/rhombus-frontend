@@ -1,0 +1,73 @@
+.ExpandedImageHeader {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    color: white;
+}
+
+.ExpandedImageHeader .fileContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.ExpandedImageHeader .fileName {
+    font-family: var(--font-eina);
+    font-size: 16px;
+    line-height: 22px;
+    margin: 0;
+    max-width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ExpandedImageHeader .author {
+    font-family: var(--font-maison);
+    font-size: 12px;
+    line-height: 16px;
+    margin: 0;
+}
+
+.closeButton {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    margin: 0 0 0 25px;
+    padding-top: 6px;
+}
+
+.closeButton:focus {
+    outline: none;
+}
+
+.ExpandedImageHeader .logo {
+    margin: 0 20px;
+}
+
+.ExpandedImageHeader .closeButton g {
+    fill: rgb(255, 255, 255);
+}
+
+.ExpandedImageHeader .closeButton:hover g {
+    fill: var(--color-pink);
+}
+
+.ExpandedImageHeader .logo g {
+    fill: rgb(255, 255, 255);
+}
+
+.expandedDownload {
+    position: absolute;
+    top: 28px;
+    right: 30px;
+    line-height: 0 !important;
+    height: 36px !important;
+    min-width: 128px !important;
+}
+
+.expandedDownload a {
+    color: white;
+    text-decoration: none;
+}

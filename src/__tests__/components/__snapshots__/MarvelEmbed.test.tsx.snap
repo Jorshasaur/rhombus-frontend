@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MarvelEmbed /> should render a Marvel embed 1`] = `
+<Fragment>
+  <div
+    className="
+                        blockEmbedWrapper
+                        marvel
+                        123456
+                    "
+  >
+    <div
+      className="extendedInfo"
+      style={
+        Object {
+          "borderTop": 0,
+        }
+      }
+    >
+      <img
+        className="ratio"
+        src="prototype-placeholder.png"
+      />
+      <div
+        className="infoWrapper thumbnailEmbed"
+      >
+        <iframe
+          src="https://marvelapp.com/8eabb41/screen/56077731"
+        />
+      </div>
+    </div>
+    <Button
+      className="editButton"
+      data-allow-propagation="true"
+      data-testid="marvel-embed__expand-button"
+      onClick={[Function]}
+      onMouseDown={[Function]}
+      order="primary"
+      role="button"
+      style={
+        Object {
+          "borderRadius": "50%",
+          "padding": "1px 12px",
+        }
+      }
+    >
+      <svg
+        data-allow-propagation="true"
+        fill="white"
+        style={
+          Object {
+            "margin": 0,
+          }
+        }
+      />
+    </Button>
+  </div>
+  <PersistentBar
+    hoverChildren={
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+          }
+        }
+      >
+        <Unknown
+          author="Bob the Builder"
+          className="persistentTimestamp"
+          createdAt="2018-11-14T20:16:45.000Z"
+        />
+      </div>
+    }
+    onClick={[Function]}
+    originalLink="https://marvelapp.com/8eabb41/screen/56077731"
+    service="marvel"
+  />
+</Fragment>
+`;

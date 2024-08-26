@@ -1,0 +1,7 @@
+export enum types {
+    ADD_IMAGE_DATA = 'images/ADD_IMAGE_DATA',
+    ADD_IMAGE_DATAS = 'images/ADD_IMAGE_DATAS',
+    CLEAR_ACTIVE_IMAGE = 'images/CLEAR_ACTIVE_IMAGE',
+    NEW_ACTIVE_IMAGE = 'images/NEW_ACTIVE_IMAGE',
+    SET_IMAGE_LIST = 'images/SET_IMAGE_LIST'
+}

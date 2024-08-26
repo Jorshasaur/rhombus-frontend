@@ -1,0 +1,45 @@
+:root {
+    --gutter: 24px;
+    --gutter-two-columns: 48px;
+    --gutter-small: 46px;
+    --columns: 12;
+    --one-columns: calc((100% * (1 / var(--columns))));
+    --two-columns: calc((100% * (2 / var(--columns))));
+    --three-columns: calc((100% * (3 / var(--columns))));
+    --four-columns: calc((100% * (4 / var(--columns))));
+    --five-columns: calc((100% * (5 / var(--columns))));
+    --six-columns: calc((100% * (6 / var(--columns))));
+    --seven-columns: calc((100% * (7 / var(--columns))));
+    --eight-columns: calc((100% * (8 / var(--columns))));
+    --nine-columns: calc((100% * (9 / var(--columns))));
+    --ten-columns: calc((100% * (10 / var(--columns))));
+    --eleven-columns: calc((100% * (11 / var(--columns))));
+    --twelve-columns: calc((100% * (12 / var(--columns))));
+}
+
+.grid-container {
+    align-items: stretch;
+    display: flex;
+    padding: 0 var(--gutter-two-columns) 0 0;
+    min-height: 100%;
+    position: relative;
+    width: calc(100% - 48px);
+}
+
+@media screen and (max-width: 736px) {
+    .grid-container {
+        padding: 0 var(--gutter-small) 0 0;
+        width: calc(100% - 46px);
+    }
+}
+
+.grid-child {
+    margin-left: var(--gutter);
+    width: var(--twelve-columns);
+}
+
+@media screen and (max-width: 736px) {
+    .grid-child {
+        margin-left: var(--gutter-small);
+    }
+}

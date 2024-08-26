@@ -1,0 +1,192 @@
+.plus-menu {
+    display: block;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 30px;
+    height: 375px;
+    width: 201px;
+    background: white;
+    border-radius: 4px;
+    font-family: var(--font-maison);
+    letter-spacing: 0.4px;
+    opacity: 0;
+    animation: plus-menu-animate 0.3s ease forwards;
+}
+
+.plus-menu::after {
+    border-radius: 4px;
+    bottom: 0;
+    box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.1), 0 5px 10px 0 rgba(0, 0, 0, 0.15);
+    content: '';
+    left: 0;
+    opacity: 1;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.plus-menu .container {
+    width: 201px;
+    height: 375px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 19px 0;
+    position: relative;
+    z-index: 11;
+    color: var(--color-plus-menu-header);
+    animation: plus-menu-animate 0.3s ease forwards;
+}
+
+.plus-menu .container h4 {
+    font-size: 12px;
+    line-height: 16px;
+    margin: 0;
+    padding: 0 18px;
+}
+
+.plus-menu .container hr {
+    background-color: var(--color-gray-lighter);
+    border: none;
+    height: 1px;
+    text-align: center;
+    margin: 0 16px;
+}
+
+.plus-menu .container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.plus-menu .container .image-icon {
+    width: 21px;
+    position: relative;
+    left: 1px;
+}
+
+.image-icon.fill-primary g {
+    fill: var(--color-persistent-bar-icon);
+}
+
+.plus-menu .container .youtube-icon {
+    background-image: url('../../../../assets/images/icons/third-party/youtube.svg');
+    width: 18px;
+    height: 13px;
+    top: 6px;
+    left: 3px;
+}
+
+.plus-menu .container .vimeo-icon {
+    background-image: url('../../../../assets/images/icons/third-party/vimeo.svg');
+    width: 16px;
+    height: 16px;
+    top: 4px;
+    left: 4px;
+}
+
+.plus-menu .container .spotify-icon {
+    background-image: url('../../../../assets/images/icons/third-party/spotify.svg');
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 17px;
+    top: 4px;
+    left: 4px;
+}
+
+.plus-menu .container .marvel-icon {
+    background-image: url('../../../../assets/images/icons/third-party/marvel.svg');
+    width: 16px;
+    height: 11px;
+    top: 7px;
+    left: 3px;
+}
+
+.plus-menu .container .soundcloud-icon {
+    background-image: url('../../../../assets/images/icons/third-party/soundcloud.svg');
+    width: 20px;
+    height: 10px;
+    top: 8px;
+    left: 2px;
+}
+
+.plus-menu .container .codepen-icon {
+    background-image: url('../../../../assets/images/icons/third-party/codepen.svg');
+    width: 17px;
+    height: 17px;
+    top: 4px;
+    left: 4px;
+}
+
+.scroll-stop {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    opacity: 0;
+    overflow: hidden;
+    background-color: white;
+}
+
+.plus-menu-line-bar {
+    height: 28px;
+    position: absolute;
+    left: 30px;
+    right: 30px;
+    border-radius: 4px;
+    background-color: var(--color-mark);
+    animation: plus-menu-line-bar-animate 0.3s ease forwards;
+}
+
+.plus-menu-embed {
+    height: 28px;
+    will-change: height opacity;
+    opacity: 0;
+    animation: plus-menu-embed-animate 0.7s ease forwards;
+}
+
+@keyframes plus-menu-line-bar-animate {
+
+    from {
+        opacity: 0;
+        height: 0;
+    }
+
+    to {
+        opacity: 1;
+        height: 28px;
+    }
+}
+
+@keyframes plus-menu-animate {
+
+    from {
+        opacity: 0;
+        height: 365px;
+    }
+
+    to {
+        opacity: 1;
+        height: 375px;
+    }
+}
+
+@keyframes plus-menu-embed-animate {
+
+    0% {
+        opacity: 0;
+        height: 28px;
+    }
+
+    90% {
+        opacity: 0;
+        height: 314px;
+    }
+
+    100% {
+        opacity: 1;
+        height: 314px;
+    }
+}

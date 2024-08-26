@@ -1,0 +1,131 @@
+/*
+Player Skin Designer for Video.js
+http://videojs.com
+
+To customize the player skin edit
+the CSS below. Click "details"
+below to add comments or questions.
+This file uses some SCSS. Learn more
+at http://sass-lang.com/guide)
+
+This designer can be linked to at:
+https://codepen.io/heff/pen/EarCt/left/?editors=010
+*/
+
+.video-js {
+    /* The base font size controls the size of everything, not just text.
+            All dimensions use em-based sizes so that the scale along with the font size.
+            Try increasing it to 15px and see what happens. */
+    font-size: 10px;
+    /* The main font color changes the ICON COLORS as well as the text */
+    color: #fff;
+    cursor: pointer;
+}
+
+.video-js:hover .vjs-big-play-button {
+    background-color: #ff3366 !important;
+}
+
+/* The "Big Play Button" is the play button that shows before the video plays.
+    To center it set the align values to center and middle. The typical location
+    of the button is the center, but there is trend towards moving it to a corner
+    where it gets out of the way of valuable content in the poster image.*/
+.video-js .vjs-big-play-button {
+    /* The font size is what makes the big play button...big.
+            All width/height values use ems, which are a multiple of the font size.
+            If the .video-js font-size is 10px, then 3em equals 30px.*/
+    font-size: 3em;
+    line-height: 70px !important;
+    height: 70px !important;
+    width: 70px !important;
+    border: none !important;
+    border-radius: 35px !important;
+
+    background-color: rgba(255, 51, 102, 0.7) !important;
+
+    /* Align center */
+    left: 50%;
+    top: 50%;
+    margin-left: -35px !important;
+    margin-top: -35px !important;
+}
+
+.video-js .vjs-big-play-button:hover {
+    background-color: #ff3366 !important;
+}
+
+/* Slider - used for Volume bar and Progress bar */
+.video-js .vjs-slider {
+    background-color: rgba(84, 84, 84, 0.5) !important;
+}
+
+/* The slider bar color is used for the progress bar and the volume bar
+    (the first two can be removed after a fix that's coming) */
+.video-js .vjs-volume-level,
+.video-js .vjs-play-progress,
+.video-js .vjs-slider-bar {
+    background: #fff !important;
+}
+
+/* The main progress bar also has a bar that shows how much has been loaded. */
+.video-js .vjs-load-progress {
+    background: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* The load progress bar also has internal divs that represent
+    smaller disconnected loaded time ranges */
+.video-js .vjs-load-progress div {
+    background: rgba(255, 255, 255, 0.5) !important;
+}
+
+.video-js .vjs-progress-control {
+    position: absolute !important;
+    width: 100% !important;
+    padding: 0 15px !important;
+    bottom: 35px !important;
+    height: auto !important;
+}
+
+.video-js .vjs-fullscreen-control {
+    position: absolute !important;
+    right: 6px !important;
+}
+
+.video-js .vjs-control-bar {
+    padding: 30px 0 !important;
+    background: linear-gradient(
+        180deg,
+        rgba(21, 24, 31, 0) 0%,
+        rgba(21, 24, 31, 0.9) 100%
+    ) !important;
+}
+
+.video-js .vjs-control-bar .vjs-volume-panel {
+    position: absolute !important;
+    right: 40px !important;
+}
+
+.video-js .vjs-progress-control .vjs-progress-holder {
+    margin: 0 !important;
+}
+
+.video-js .vjs-control:focus {
+    outline: none !important;
+}
+
+.video-js .vjs-big-play-button .vjs-icon-placeholder {
+    background-image: url('../../../../assets/images/video/play.svg');
+    background-repeat: no-repeat;
+    width: 21px;
+    height: 21px;
+    display: inline-block;
+    margin-left: 3px;
+}
+
+.video-js .vjs-big-play-button .vjs-icon-placeholder:before {
+    content: none !important;
+}
+
+.video-js .vjs-progress-control .vjs-progress-holder .vjs-mouse-display {
+    display: none !important;
+}

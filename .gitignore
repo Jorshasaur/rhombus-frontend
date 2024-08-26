@@ -1,0 +1,7 @@
+config
+.DS_Store
+*.env
+aws-deployment.*
+build.sh
+codeship-*.*
+codeship.*

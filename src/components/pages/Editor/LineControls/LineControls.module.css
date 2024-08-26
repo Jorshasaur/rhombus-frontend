@@ -1,0 +1,66 @@
+.line-controls {
+    display: flex;
+    left: -37px;
+    opacity: 1;
+    position: absolute;
+    transition: opacity 0.3s ease;
+    z-index: var(--upload-button-layer);
+}
+
+.line-controls.hide {
+    opacity: 0;
+}
+
+.line-controls.resizing {
+    transition: left 0.3s ease;
+}
+
+.line-controls button.active svg path {
+    fill: var(--color-link);
+}
+
+.line-controls button:hover {
+    cursor: pointer;
+}
+
+.line-controls svg path {
+    transition: fill 0.3s ease;
+    fill: var(--color-line-control-button);
+}
+
+.line-controls svg:hover path {
+    fill: var(--color-link);
+}
+.resize-container {
+    display: flex;
+    background: white;
+    border-radius: 4px;
+    flex-direction: column;
+    left: -24px;
+    padding: 0 0 4px;
+    position: relative;
+    top: 30px;
+    width: 31px;
+}
+.resize-container.comment-only {
+    top: -13px;
+}
+.line-control-button {
+    background: none;
+    border: none;
+    outline: none;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.resize-control-button {
+    margin: 0 0 3px;
+}
+
+.comment-control-button {
+    margin: 13px 0 0;
+}
+.drag-button {
+    cursor: move;
+}

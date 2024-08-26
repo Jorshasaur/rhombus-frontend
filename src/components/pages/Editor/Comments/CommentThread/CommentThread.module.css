@@ -1,0 +1,476 @@
+@value large-image-delay: 0.2s;
+@value large-image-speed: 0.5s;
+
+.comment-container {
+    --comment-font-size: 14px;
+    --comment-line-height: 21px;
+
+    background: white;
+    border-radius: 8px;
+    font-family: var(--font-maison);
+    letter-spacing: 0.4px;
+    left: 0;
+    opacity: 0;
+    padding: 18px 0;
+    position: relative;
+    right: 0;
+    transform: translateY(10px);
+    transition: transform 0.3s ease, opacity 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.comment-container.collapsed {
+    z-index: 0;
+}
+
+.comment-container.mounted {
+    opacity: 1;
+    transform: translateY(0);
+    transition: top 0.3s ease;
+}
+
+.comment-container.resolved {
+    display: none;
+}
+
+.comment-container::before {
+    border-radius: 8px;
+    bottom: 0;
+    border: 2px solid var(--color-light-blue);
+    content: '';
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.comment-container::after {
+    border-radius: 8px;
+    bottom: 0;
+    box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.15), 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+    content: '';
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.comment-container.has-comments:not(.focused) {
+    padding: 18px 0 8px;
+}
+
+.comment-container.focused,
+.comment-container.highlighted {
+    border: none;
+    opacity: 1;
+}
+
+.comment-container.focused:not(.collapsed),
+.comment-container.highlighted:not(.collapsed) {
+    z-index: 1;
+}
+
+.comment-container.focused::before,
+.comment-container.highlighted::before {
+    opacity: 0;
+}
+
+.comment-container.focused::after,
+.comment-container.highlighted::after {
+    opacity: 1;
+}
+
+.comment-container.focused {
+    z-index: 1;
+}
+
+.comment-container.collapsed::before {
+    opacity: 0;
+}
+
+.comment-container.collapsed::after {
+    opacity: 0;
+}
+
+.comment-container a,
+.comment-container a:visited {
+    color: var(--color-link);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.comment-container.open-slowly {
+    transition: transform large-image-speed ease large-image-delay;
+}
+
+.resolve {
+    position: absolute;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    right: 20px;
+    font-family: var(--font-maison);
+    font-size: 12px;
+    color: var(--color-link);
+    cursor: pointer;
+    display: none;
+    z-index: 3;
+}
+
+.resolve.focused {
+    opacity: 1;
+    display: inline-block;
+    transition: opacity 0.3s ease;
+}
+
+.avatar-container {
+    min-width: 32px;
+    position: absolute;
+    z-index: 2;
+}
+
+.avatar-container.has-error {
+    padding-top: 8px;
+    padding-left: 4px;
+}
+
+.avatar-container.avatar-only {
+    right: 18px;
+}
+
+.comment {
+    display: flex;
+    min-height: 32px;
+    opacity: 0.5;
+    position: relative;
+    padding: 0 20px;
+    transition: all 0.3s ease;
+}
+
+.open-slowly > div:nth-of-type(2) > .comment {
+    padding-top: 0;
+    animation: large-image-comment-motion large-image-speed ease
+        large-image-delay forwards;
+}
+
+.focused .comment,
+.highlighted .comment {
+    opacity: 1;
+}
+
+.comment:not(.new-comment) {
+    padding: 0 20px 15px;
+}
+
+.new-comment.has-comments {
+    display: none;
+    margin-top: 25px;
+    padding: 9px 20px 7px;
+}
+
+.new-comment.has-comments::before {
+    content: '';
+    background: var(--blockquote-border);
+    position: absolute;
+    height: 1px;
+    left: 0;
+    right: 0;
+    top: -18px;
+}
+
+.focused .new-comment {
+    display: block;
+    z-index: 2;
+}
+
+.edit-comment-button {
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    fill: var(--color-light-grey);
+    opacity: 0;
+    position: absolute;
+    right: 20px;
+    transition: opacity 0.3s ease, color 0.3s ease;
+    top: 17px;
+}
+
+.edit-comment-button:hover {
+    cursor: pointer;
+    fill: var(--color-link);
+}
+
+.comment-meta {
+    display: none;
+    margin-bottom: 3px;
+}
+
+.comment-name {
+    color: var(--color-dark-grey);
+    display: inline-block;
+    font-family: var(--font-maison-demi);
+    font-size: 14px;
+    margin-right: 8px;
+}
+
+.comment-time {
+    color: var(--color-slate);
+    display: inline-block;
+    font-size: 12px;
+}
+
+.comment.focused {
+    padding: 15px 20px;
+}
+
+.comment.focused:hover .edit-comment-button {
+    opacity: 1;
+}
+
+.comment.focused .comment-meta {
+    display: block;
+}
+
+.comment-area {
+    padding: 6px 16px 0 43px;
+    width: 100%;
+    position: relative;
+}
+
+.comment-area.text-entered {
+    padding: 6px 0 0 43px;
+}
+
+.comment-text {
+    color: var(--color-dark-blue);
+    font-size: 14px;
+    line-height: 21px;
+    word-wrap: break-word;
+    position: relative;
+    opacity: 0;
+}
+
+.comment-text.error-text {
+    color: red;
+    font-size: 12px;
+    line-height: 15px;
+    max-width: 180px;
+    opacity: 1;
+    z-index: 4;
+}
+
+.comment-text.show-text {
+    opacity: 1;
+    z-index: 4;
+}
+
+.comment-text.truncate {
+    height: 63px;
+    overflow: hidden;
+}
+
+.comment-text .ellipses-container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 111px;
+    display: flex;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 1) 89px
+    );
+}
+
+.comment-text .ellipses-container svg {
+    margin-top: 8px;
+    margin-left: auto;
+    width: 12px;
+    height: 12px;
+}
+
+.collapsed-comment-leader {
+    /* Vertical bar between avatars */
+}
+
+.collapsed-comment-leader::after {
+    content: '';
+    background: var(--blockquote-border);
+    height: calc(100% + 32px);
+    width: 1px;
+    display: block;
+    position: absolute;
+    left: 36px;
+    z-index: 1;
+}
+
+.collapsed-comment-leader.avatar-only::after {
+    left: auto;
+    right: 34px;
+}
+
+.collapsed-comment-leader.two-comment-leader {
+    margin: 0 0 31px;
+}
+
+.additional-comment-text {
+    color: var(--color-dropdown-arrow);
+    font-family: var(--font-maison-italic);
+    font-size: 12px;
+    opacity: 0.5;
+    padding: 0 0 15px 63px;
+    position: relative;
+}
+
+.additional-comment-text.avatar-only {
+    opacity: 0;
+}
+
+.focused .additional-comment-text,
+.highlighted .additional-comment-text {
+    opacity: 1;
+}
+
+.comment-editor {
+    padding: 0;
+    transition: padding 0.3s ease;
+}
+
+.comment-editor:global(.ql-container) {
+    height: auto;
+}
+
+.comment-editor :global(.ql-editor),
+.comment-editor :global(.ql-editor p:first-child) {
+    caret-color: auto;
+    color: var(--color-dark-blue);
+    font-family: var(--font-maison);
+    font-size: var(--comment-font-size);
+    font-weight: 200;
+    line-height: var(--comment-line-height);
+    padding: 0;
+    letter-spacing: 0.4px;
+}
+
+.comment-editor.text-entered :global(.ql-editor) {
+    padding: 0 0 9px;
+}
+
+.comment-editor {
+    /* Placeholder text */
+}
+
+.comment-editor :global(.ql-editor.ql-blank::before) {
+    font-family: var(--font-maison);
+    color: var(--color-light-grey);
+    font-size: 14px;
+    font-style: normal;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    right: auto;
+}
+
+.comment-editor p:first-child {
+    font-size: var(--comment-font-size);
+}
+
+.comment-actions {
+    color: var(--color-light-grey);
+    font-family: var(--font-maison);
+    height: 0;
+    letter-spacing: 0.4px;
+    opacity: 0;
+    overflow: hidden;
+    font-size: 12px;
+    transform-origin: top;
+    transition: all 0.3s ease;
+    transform: translateY(-10px);
+    visibility: hidden;
+}
+
+.focused .comment-actions.text-entered {
+    height: auto;
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+.emoji-button {
+    transition: all 0.3s ease;
+    background: none;
+    border: none;
+    height: 16px;
+    padding: 0;
+    opacity: 0;
+    position: absolute;
+    bottom: 8px;
+    right: 20px;
+    transition: opacity 0.3s ease;
+    visibility: hidden;
+    width: 16px;
+}
+
+.emoji-button.text-entered {
+    bottom: 0;
+}
+
+.focused .emoji-button {
+    opacity: 1;
+    visibility: visible;
+}
+
+.notify-text {
+    color: var(--color-dark-blue);
+    font-family: var(--font-maison);
+    font-size: 12px;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0 0 2px 22px;
+    transform-origin: top;
+    transition: all 0.3s ease;
+    transform: translateY(10px);
+    visibility: hidden;
+    z-index: 2;
+}
+
+.focused .notify-text.text-entered {
+    height: auto;
+    margin-top: 32px;
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+.comment-container.open-slowly {
+    opacity: 0;
+    animation: large-image-resize large-image-speed ease large-image-delay
+        forwards;
+}
+
+@keyframes large-image-resize {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes large-image-comment-motion {
+    0% {
+        padding-top: 0;
+    }
+
+    100% {
+        padding-top: 15px;
+    }
+}

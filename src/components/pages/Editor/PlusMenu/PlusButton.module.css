@@ -1,0 +1,11 @@
+.plus-button {
+    background: none;
+    border: none;
+    outline: none;
+    position: relative;
+    margin: 0;
+    right: 3px;
+}
+.plus-button:hover svg path {
+    fill: #2761f1;
+}

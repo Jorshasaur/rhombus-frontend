@@ -1,0 +1,18 @@
+specVersion: v1
+
+owner:
+  active:
+    team: studio-harmony-eng
+    since: 2017-10-17
+description: "The Rhombus web application"
+type: service
+visibility: private
+service-type: bff
+platform-version: 7
+service-tier: 2
+code-coverage:
+  goal-percent: 75
+
+resources:
+  - id: pages-ui
+    spec-path: pages-ui.yaml

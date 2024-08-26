@@ -1,0 +1,20 @@
+.mark {
+    border-bottom: 2px solid var(--color-mark);
+}
+
+.mark.selected {
+    background-color: var(--color-mark);
+}
+
+.mark.hidden {
+    border-color: transparent;
+    background-color: transparent;
+}
+
+:global(.editor-archived) .mark {
+    border-bottom: 2px solid transparent;
+}
+
+:global(.editor-archived) .mark.selected {
+    background-color: transparent;
+}

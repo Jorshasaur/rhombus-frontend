@@ -1,0 +1,206 @@
+@font-face {
+    font-family: 'Source Code Pro Regular';
+    src: url('../fonts/source-code-pro/SourceCodePro-Regular.ttf')
+        format('truetype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Eina Semibold';
+    src: url('../fonts/eina/Eina01-SemiBold.otf') format('opentype');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Eina Semibold Italic';
+    src: url('../fonts/eina/Eina01-SemiboldItalic.otf') format('opentype');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Eina 03';
+    src: url('../fonts/eina/Eina03-SemiBold.woff') format('opentype');
+    font-weight: 600;
+}
+
+/* START CHRIS ADDITIONS */
+
+@font-face {
+    font-family: 'Inv Maison Neue';
+    src: url('../fonts/maison/MaisonNeue-Book.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Maison Neue Regular';
+    src: url('../fonts/maison/MaisonNeue-Book.otf') format('opentype');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Maison Neue Italic';
+    src: url('../fonts/maison/MaisonNeue-BookItalic.otf') format('opentype');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Maison Neue Demi';
+    src: url('../fonts/maison/MaisonNeue-Demi.otf') format('opentype');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Maison Neue Demi Italic';
+    src: url('../fonts/maison/MaisonNeue-DemiItalic.otf') format('opentype');
+    font-weight: 600;
+}
+
+:root {
+    --font-eina: 'Eina Semibold', sans-serif;
+    --font-eina-italic: 'Eina Semibold Italic', sans-serif;
+    --font-maison: 'Maison Neue Regular', sans-serif;
+    --font-maison-italic: 'Maison Neue Italic', sans-serif;
+    --font-maison-demi: 'Maison Neue Demi', sans-serif;
+    --font-maison-demi-italic: 'Maison Neue Demi Italic', sans-serif;
+}
+
+.editor *,
+.editor *::before,
+.editor *::after {
+    box-sizing: border-box;
+}
+
+.App {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.page-list {
+    margin: 80px auto 0;
+    max-width: 800px;
+    text-align: center;
+}
+
+.editor {
+    composes: grid-container from './common/grid.module.css';
+    box-sizing: border-box;
+    padding-bottom: 25px;
+}
+
+.editor.no-edit {
+    caret-color: transparent;
+}
+
+.editor.no-edit :global(.ql-editor > *) {
+    cursor: default;
+}
+
+.editor-container {
+    composes: grid-child from './common/grid.module.css';
+    display: flex;
+    flex-flow: column;
+    position: relative;
+    width: var(--six-columns);
+    flex-shrink: 0;
+}
+
+@media screen and (max-width: 1280px) {
+    .editor-container {
+        width: var(--seven-columns);
+    }
+}
+
+@media screen and (max-width: 736px) {
+    .editor-container {
+        width: var(--twelve-columns);
+    }
+}
+
+.editor-container :global(.ql-toolbar.ql-snow) {
+    flex: 0 1 auto;
+}
+
+.editor-container :global(.ql-container.ql-snow) {
+    border: 0;
+    flex: 1 1 auto;
+    height: auto;
+    position: relative;
+    top: 0;
+}
+
+:global(.ql-container hr) {
+    border: none;
+    height: 2px;
+    background: var(--color-divider);
+    margin: 13px 0;
+}
+
+.permissions-error {
+    position: absolute;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 530px;
+    right: 0;
+}
+
+.archived-alert {
+    margin-top: 42px;
+}
+
+.archived-alert a {
+    color: #2761f1;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+:global(.editor-archived .ql-container) {
+    opacity: 0.5;
+    caret-color: transparent;
+}
+
+:global(.privacy-dialog button[order='outline']) {
+    display: none;
+}
+
+:global(.privacy-dialog button[order='primary']) {
+    margin: 0 auto;
+    min-width: 285px;
+}
+
+.modal-container {
+    align-items: center;
+    display: flex;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+
+    z-index: 5;
+    left: 0;
+    top: 0;
+}
+
+.modal-container a {
+    color: #2761f1;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.subscribed-to-document-toast {
+    z-index: 5 !important;
+    top: 50px !important;
+}
+
+.subscribed-to-document-toast a {
+    color: var(--color-blue);
+    cursor: pointer;
+    padding-left: 2px;
+}

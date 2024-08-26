@@ -1,0 +1,4 @@
+export enum types {
+    SHOW_DOCUMENT_HISTORY = 'history/SHOW_DOCUMENT_HISTORY',
+    HIDE_DOCUMENT_HISTORY = 'history/HIDE_DOCUMENT_HISTORY'
+}

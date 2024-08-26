@@ -1,0 +1,19 @@
+.comments {
+    composes: grid-child from '../../../../assets/css/common/grid.module.css';
+    position: relative;
+    transition: transform 0.3s ease;
+    width: var(--three-columns);
+    flex-shrink: 0;
+}
+
+@media screen and (max-width: 1280px) {
+    .comments {
+        width: var(--three-columns);
+    }
+}
+
+@media screen and (max-width: 736px) {
+    .comments {
+        display: none;
+    }
+}

@@ -1,0 +1,19 @@
+.plus-menu-button {
+    font-family: inherit;
+    color: var(--color-structure-light);
+    letter-spacing: 0.29px;
+    outline: none;
+    cursor: pointer;
+    width: 100%;
+    height: 40px;
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    grid-gap: 10px;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: unset;
+    padding: 2px 18px;
+}
+.plus-menu-button:hover {
+    background-color: var(--color-structure-lightest);
+}

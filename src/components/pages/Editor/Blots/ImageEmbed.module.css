@@ -1,0 +1,53 @@
+.upload-placeholder {
+    position: relative;
+    width: 100%;
+}
+
+.upload-placeholder img {
+    position: absolute;
+    opacity: 0.15;
+}
+
+.image-embed-node,
+.image-embed-node-wrapper {
+    will-change: width, height, left;
+    transition: width 0.3s ease, height 0.3s ease, left 0.3s ease;
+    width: 100%;
+}
+
+.image-embed-node-wrapper {
+    position: relative;
+}
+
+.image-embed-node {
+    left: 0;
+    max-width: none !important;
+    position: absolute;
+    width: 100%;
+}
+
+.image-embed-node-container {
+    will-change: width, height, left;
+    transition: width 0.3s ease, height 0.3s ease, left 0.3s ease;
+}
+
+:global(#document-history-editor) div[data-size='large'] .image-embed-node {
+    height: auto !important;
+    left: auto !important;
+    max-width: 100% !important;
+    position: relative;
+    width: 100% !important;
+}
+
+:global(#document-history-editor)
+    div[data-size='large']
+    .image-embed-node-wrapper {
+    height: auto !important;
+}
+
+:global(#document-history-editor)
+    div[data-size='large']
+    .image-embed-node-container {
+    height: auto !important;
+    width: 100% !important;
+}

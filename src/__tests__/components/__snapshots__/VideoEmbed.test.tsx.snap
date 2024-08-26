@@ -1,0 +1,191 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VideoEmbed component should render a video embed 1`] = `
+<VideoEmbed
+  authorId="1"
+  authorName="Bob the Builder"
+  container={<div />}
+  createdAt="2018-04-24T20:09:17.175Z"
+  embedData={
+    Object {
+      "fileName": "test.mp4",
+      "id": "123",
+    }
+  }
+  key="123456"
+  service="video"
+  size="medium"
+  uuid="123456"
+  version={1}
+>
+  <Subscribe
+    to={
+      Array [
+        [Function],
+      ]
+    }
+  >
+    <Consumer>
+      <AnimatedEmbedWrapper
+        container={<div />}
+        getEmbedSize={[Function]}
+        hasOpenThread={false}
+        onTransitionEnd={[Function]}
+        renderFullSize={[Function]}
+        size="medium"
+      >
+        <div
+          className="container"
+          data-testid="animated-embed-wrapper__medium"
+          onTransitionEnd={[Function]}
+          style={
+            Object {
+              "height": 140,
+              "left": 0,
+              "overflow": "hidden",
+              "width": 100,
+            }
+          }
+        >
+          <div
+            className="medium"
+            style={
+              Object {
+                "opacity": 1,
+                "pointerEvents": "unset",
+              }
+            }
+          >
+            <div
+              className="blockEmbedWrapper video 123456"
+            >
+              <Video
+                asset={
+                  Object {
+                    "fileName": "test.mp4",
+                    "id": "123",
+                    "url": "http://video.mp4",
+                  }
+                }
+              >
+                <div
+                  className="extendedInfo"
+                >
+                  <video
+                    className="video-js vjs-big-play-centered video"
+                    controls={true}
+                  >
+                    <source
+                      src="http://video.mp4?filename=test.mp4"
+                    />
+                  </video>
+                </div>
+              </Video>
+            </div>
+            <PersistentBar
+              hoverChildren={
+                <div
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "display": "flex",
+                    }
+                  }
+                >
+                  <Unknown
+                    author="Bob the Builder"
+                    className="persistentTimestamp"
+                    createdAt="2018-04-24T20:09:17.175Z"
+                  />
+                </div>
+              }
+              name="test.mp4"
+              service="video"
+            >
+              <div
+                className="persistentBar"
+                data-allow-propagation="true"
+                data-persistent-bar={true}
+                onClick={[Function]}
+              >
+                <a
+                  className="serviceIcon video"
+                  data-allow-propagation="true"
+                >
+                  <svg
+                    fill="var(--color-persistent-bar-icon)"
+                    height={18}
+                    width={21}
+                  />
+                </a>
+                <div
+                  className="textContent"
+                  data-testid="persistent-bar-title"
+                >
+                  <div
+                    className="title"
+                  >
+                    test.mp4
+                  </div>
+                </div>
+                <div
+                  className="barChildren persistent-bar__children"
+                  data-testid="persistent-bar__children"
+                />
+                <div
+                  className="hoverChildren persistent-bar__hover-children"
+                  data-testid="persistent-bar__hover-children"
+                  onClick={[Function]}
+                >
+                  <div
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "display": "flex",
+                      }
+                    }
+                  >
+                    <Component
+                      author="Bob the Builder"
+                      className="persistentTimestamp"
+                      createdAt="2018-04-24T20:09:17.175Z"
+                    >
+                      <div
+                        className="persistentTimestamp"
+                        style={
+                          Object {
+                            "maxWidth": undefined,
+                          }
+                        }
+                      >
+                        Added 
+                        <TimeAgo
+                          component="time"
+                          date="2018-04-24T20:09:17.175Z"
+                          formatter={[Function]}
+                          live={true}
+                          maxPeriod={Infinity}
+                          minPeriod={0}
+                          now={[Function]}
+                        >
+                          <time
+                            dateTime="2018-04-24T20:09:17.175Z"
+                            title="2018-04-24T20:09:17.175Z"
+                          >
+                            1y ago
+                          </time>
+                        </TimeAgo>
+                         by Bob the Builder
+                      </div>
+                    </Component>
+                  </div>
+                </div>
+              </div>
+            </PersistentBar>
+          </div>
+        </div>
+      </AnimatedEmbedWrapper>
+    </Consumer>
+  </Subscribe>
+</VideoEmbed>
+`;

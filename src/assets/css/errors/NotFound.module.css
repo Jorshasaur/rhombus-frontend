@@ -1,0 +1,43 @@
+/* Not Found */
+.not-found {
+    background: white;
+    position: fixed;
+    width: 100%;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    z-index: 10;
+}
+
+.not-found--illustration {
+    margin-top: 12px;
+    margin-bottom: 32px;
+}
+
+.not-found--logo {
+    position: absolute;
+    left: 45px;
+    top: 45px;
+}
+
+.not-found--text {
+    margin: 24px 0;
+}
+
+.not-found--button-container {
+    font-family: 'Inv Maison Neue', 'Maison Neue', -apple-system,
+        BlinkMacSystemFont, 'Open Sans', open-sans, sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 20px;
+    letter-spacing: 0.125px;
+}
+
+.not-found--button {
+    font-size: 12px;
+}

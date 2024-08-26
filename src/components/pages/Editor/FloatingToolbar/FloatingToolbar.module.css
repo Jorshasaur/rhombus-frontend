@@ -1,0 +1,271 @@
+.floating-toolbar {
+    background: var(--color-floating-toolbar-background);
+    border-radius: 4px;
+    box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.2), 0 5px 10px 0 rgba(0, 0, 0, 0.12);
+    display: inline-flex;
+    font-family: var(--font-maison);
+    opacity: 0;
+    position: absolute;
+    transition: opacity 0.2s ease;
+    z-index: var(--floating-toolbar-layer);
+}
+
+.floating-toolbar button {
+    background: var(--color-floating-toolbar-background);
+    cursor: pointer;
+    font-family: var(--font-maison);
+}
+
+.floating-toolbar button:focus {
+    outline: none;
+}
+
+.floating-toolbar.comment-only {
+    overflow: hidden;
+}
+
+.floating-toolbar.comment-only .floating-toolbar-comment-button {
+    border-left: 0;
+    margin-left: 0;
+}
+
+.mounted {
+    composes: floating-toolbar;
+    opacity: 1;
+}
+
+.floating-toolbar-dropdown {
+    background: var(--color-floating-toolbar-background);
+    border-radius: 4px 0 0 4px;
+    height: 40px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    z-index: var(--floating-toolbar-layer);
+}
+
+.floating-toolbar-dropdown li.floating-toolbar-dropdown-item:last-child {
+    border-radius: 0 0 4px 4px;
+}
+
+.floating-toolbar-dropdown li.floating-toolbar-dropdown-item:last-child button {
+    border-radius: 0 0 4px 4px;
+}
+
+.floating-toolbar-dropdown li button {
+    border: none;
+    display: inline-block;
+    height: 100%;
+    padding: 0;
+    position: relative;
+    text-align: left;
+    width: 100%;
+    z-index: 3;
+}
+
+.floating-toolbar-dropdown li button .button-icon {
+    display: inline-flex;
+    padding: 0 18px;
+}
+
+.floating-toolbar-dropdown li button .button-icon path {
+    fill: var(--color-floating-toolbar-button);
+}
+
+.floating-toolbar-dropdown li button .button-keyboard-hint {
+    color: var(--color-floating-toolbar-keyboard-hint);
+    display: inline-block;
+    font-size: 10px;
+    padding: 0 18px 0;
+    margin-left: auto;
+    width: 61px;
+}
+
+.floating-toolbar-dropdown .floating-toolbar-dropdown-toggle {
+    height: 40px;
+}
+
+.floating-toolbar-dropdown .floating-toolbar-dropdown-toggle button {
+    color: var(--color-floating-toolbar-button);
+    border-radius: 4px 0 0 4px;
+    font-size: 14px;
+    padding: 0 0 0 18px;
+    position: relative;
+}
+
+.floating-toolbar-dropdown .floating-toolbar-dropdown-toggle button::after {
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 6px solid #c7cad1;
+    content: '';
+    height: 0;
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    width: 0;
+}
+
+.floating-toolbar-dropdown li:not(.floating-toolbar-dropdown-toggle) {
+    height: 0;
+    overflow: hidden;
+}
+
+.floating-toolbar-dropdown li.floating-toolbar-dropdown-item {
+    background: var(--color-floating-toolbar-background);
+    box-shadow: -1px 0 1px 0 rgba(0, 0, 0, 0.05),
+        0 5px 10px 0 rgba(0, 0, 0, 0.12);
+    display: block;
+    position: relative;
+}
+
+.floating-toolbar-dropdown li.floating-toolbar-dropdown-item::after {
+    background: var(--color-floating-toolbar-background);
+    bottom: 1px;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+.floating-toolbar-dropdown li.floating-toolbar-dropdown-item button {
+    align-items: center;
+    color: var(--color-floating-toolbar-button);
+    display: flex;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.floating-toolbar-dropdown li.floating-toolbar-dropdown-item button:hover {
+    background: var(--color-floating-toolbar-background-hover);
+}
+
+.floating-toolbar-dropdown li.floating-toolbar-dropdown-item:nth-child(2) {
+    border: 1px solid var(--color-dropdown-divider);
+    border-style: none;
+}
+
+.floating-toolbar-dropdown
+    li.floating-toolbar-dropdown-item:nth-child(2)::after {
+    display: none;
+}
+
+.floating-toolbar-dropdown .list-divider {
+    background: var(--color-dropdown-divider);
+    border: none;
+    box-shadow: -1px 0 1px 0 rgba(0, 0, 0, 0.05),
+        0 5px 10px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: content-box;
+    position: relative;
+    z-index: 2;
+}
+
+.floating-toolbar-dropdown .list-divider::after {
+    background: var(--color-floating-toolbar-background);
+    bottom: 1px;
+    content: '';
+    display: block;
+    height: 10px;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+.floating-toolbar-dropdown-open {
+    composes: floating-toolbar-dropdown;
+    border-radius: 4px 0 0 0;
+}
+
+.floating-toolbar-dropdown-open .floating-toolbar-dropdown-toggle button {
+    border-radius: 4px 0 0 0;
+}
+
+.floating-toolbar-dropdown-open li.floating-toolbar-dropdown-item {
+    height: 24px;
+    overflow: visible;
+}
+
+.floating-toolbar-dropdown-open li.floating-toolbar-dropdown-item:nth-child(2) {
+    border-style: solid none none;
+    height: 34px;
+    padding: 8px 0 0;
+}
+
+.floating-toolbar-dropdown-open li.floating-toolbar-dropdown-item:last-child {
+    height: 34px;
+    padding: 0 0 12px;
+}
+
+.floating-toolbar-dropdown-open li.list-divider {
+    border-bottom: 8px solid var(--color-floating-toolbar-background);
+    border-top: 6px solid var(--color-floating-toolbar-background);
+    height: 1px;
+}
+
+.floating-toolbar-inline-divider {
+    background: var(--color-dropdown-divider);
+    display: inline-block;
+    height: 40px;
+    position: relative;
+    width: 1px;
+}
+
+.floating-toolbar-inline-divider:first-of-type {
+    margin-right: 10px;
+}
+
+.floating-toolbar-inline-divider:last-of-type {
+    margin-left: 10px;
+}
+
+.floating-toolbar-inline-button {
+    background: var(--color-floating-toolbar-background);
+    border: none;
+    height: 40px;
+    overflow: hidden;
+    position: relative;
+    text-indent: -9999px;
+    white-space: nowrap;
+    width: 40px;
+}
+
+.floating-toolbar-inline-button:last-child {
+    border-radius: 0 4px 4px 0;
+}
+
+.floating-toolbar-inline-button svg {
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.floating-toolbar-inline-button path {
+    fill: var(--color-floating-toolbar-button);
+}
+
+.floating-toolbar-inline-button:hover {
+    background: var(--color-floating-toolbar-background-hover);
+}
+
+.floating-toolbar-comment-button {
+    composes: floating-toolbar-inline-button;
+    border-left: 1px solid var(--color-dropdown-divider);
+    margin-left: 10px;
+}
+
+.floating-toolbar-comment-button:hover {
+    border-left-color: var(--color-floating-toolbar-background-hover);
+}
+
+.active button {
+    color: var(--color-floating-toolbar-selected);
+}
+
+.active path {
+    fill: var(--color-floating-toolbar-selected);
+}

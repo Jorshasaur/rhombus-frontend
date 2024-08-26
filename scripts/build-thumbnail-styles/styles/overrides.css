@@ -1,0 +1,29 @@
+.ql-editor {
+    white-space: normal;
+    line-height: normal;
+}
+
+.ql-container.ql-snow {
+    border: none;
+}
+
+table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+    font-size: 14px;
+    font-weight: 200;
+    line-height: 21px;
+    letter-spacing: 0.33px;
+    color: #182237;
+}
+
+table tr {
+    margin: 0; padding: 0;
+}
+
+table td {
+    border: 1px solid #EBECEE;
+    padding: 3px 8px;
+    margin: 0;
+}
